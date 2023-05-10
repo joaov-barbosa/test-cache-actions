@@ -6,8 +6,8 @@ jobs:
        container:
           image: node:8.15.1
     steps:
-    - uses: actions/checkout@v3
-     
+    - name: checkout
+      uses: actions/checkout@v3 
     - name: Cache node modules
       id: cache-nodemodules
       uses: actions/cache@v2
@@ -19,8 +19,7 @@ jobs:
          restore-keys: |
                        ${{ runner.os }}-build-${{ env.cache-name }}-
                        ${{ runner.os }}-build-
-                       ${{ runner.os }}-
-     
+                       ${{ runner.os }}- 
     - name: Install Dependencies
       if: steps.cache-nodemodules.outputs.cache-hit != 'true'
       run: npm install
