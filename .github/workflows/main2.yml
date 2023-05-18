@@ -1,6 +1,6 @@
 on:
-    workflow_dispatch:
- jobs:
+  workflow_dispatch:
+jobs:
      test2:
         runs-on: ubuntu-latest
         environment: test
