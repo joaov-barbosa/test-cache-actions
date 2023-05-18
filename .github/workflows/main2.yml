@@ -1,8 +1,17 @@
 on:
   workflow_dispatch:
 jobs:
-     test2:
+     test:
         environment: test 
+        runs-on: ubuntu-latest
+        steps:
+        - name: print
+          run: echo "${{vars.VARIAVEL_TEST33}}"
+        - name: print
+          run: echo "${{vars.VARIAVEL_TEST33}}"
+
+     test2:
+        environment: test2 
         runs-on: ubuntu-latest
         steps:
         - name: print
